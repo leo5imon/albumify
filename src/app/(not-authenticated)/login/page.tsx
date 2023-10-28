@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Login() {
   const handleLogin = () => {
-    signIn("spotify", { callbackUrl: "https://albumify.vercel.app/" });
+    signIn("spotify", { callbackUrl: "https://www.albumify.xyz/" });
   };
 
   return (

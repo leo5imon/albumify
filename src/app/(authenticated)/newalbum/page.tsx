@@ -3,6 +3,7 @@ import filterAlbum from "@/utils/filterAlbums";
 import { getUserLikedSongs } from "@/utils/actions";
 import { getAuthSession } from "@/utils/serverUtils";
 import { playlistAlbum } from "@/utils/playlistAlbum";
+import PlaylistRedirect from "@/components/playlistRedirect";
 
 export default async function Page({searchParams}) {
     const session = await getAuthSession();
@@ -12,9 +13,9 @@ export default async function Page({searchParams}) {
 
     const likedTracks = await getUserLikedSongs(session);
     const filteredAlbum = await filterAlbum(likedTracks, 4, 20);
-
-    playlistAlbum(session, filteredAlbum.raw, searchParams.artist);
-
-return (
-    <div><p>Playlist has been created</p></div>
-)};
+    const playlistId = await playlistAlbum(session, filteredAlbum.raw, searchParams.artist);
+    
+    return (
+        <PlaylistRedirect id={playlistId}/>
+     )
+};

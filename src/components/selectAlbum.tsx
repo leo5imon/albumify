@@ -1,12 +1,12 @@
 'use client'
 import Image from 'next/image';
 
-interface DropDownProps {
+interface selectAlbumProps {
   artist: string[];
   url: string[];
 }
 
-const SelectAlbum = ({ artist, url }: DropDownProps) => {
+const SelectAlbum = ({ artist, url }: selectAlbumProps) => {
   const onClick = (value: string) => {
     if (!value) {
       return;
