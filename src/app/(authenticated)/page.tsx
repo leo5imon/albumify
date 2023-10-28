@@ -17,8 +17,8 @@ export default async function LikedTracksPage() {
     const strFiltered = JSON.stringify(filteredAlbum.val);
     const strClean = strFiltered.replace(/['"]+/g, '').replace(/[\[\]']+/g, '');
     const artId = await getSeveralArtistsById (session, 'ids=' + strClean);
-    let artName = [];
-    let artImg = [];
+    let artName : string[] = [];
+    let artImg : string[] = [];
 
     for (let i = 0; i < filteredAlbum.val.length; i++) {
       artName.push(artId.artists[i].name);
