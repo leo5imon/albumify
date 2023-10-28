@@ -1,3 +1,4 @@
+'use server'
 import { getAuthSession } from "@/utils/serverUtils";
 import { getSeveralArtistsById, getUserLikedSongs } from "@/utils/actions";
 import { redirect } from "next/navigation";

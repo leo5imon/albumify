@@ -1,3 +1,4 @@
+'use server'
 import { redirect } from "next/navigation";
 import filterAlbum from "@/utils/filterAlbums";
 import { getUserLikedSongs } from "@/utils/actions";
