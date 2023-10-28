@@ -4,8 +4,8 @@
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 interface DropDownProps {
-  artist: { value: string[] };
-  url: { value: string[] };
+  artist: string[];
+  url: string[];
 }
 
 const SelectAlbum = ({ artist, url }: DropDownProps) => {
@@ -25,7 +25,7 @@ const SelectAlbum = ({ artist, url }: DropDownProps) => {
       <div className="grid grid-cols-8 gap-4">
       {artist.map((opt, i) => (
         <div className="overflow-hidden cursor-pointer" key={opt} onClick={() => onClick(artist[i])}>
-          <img className="p-2 object-cover aspect-square hover:scale-105" src={url[i]} alt="Image"/>
+          <img className="p-2 object-cover aspect-square hover:scale-105" src={url[i]} alt={artist[i]}/>
           <p className="text-black text-center">{artist[i]}</p>
         </div>
       ))}
