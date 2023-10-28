@@ -6,6 +6,7 @@ import {
   Playlist,
   Track,
   TrackAnalysis,
+  SeveralArtists,
 } from "@/types/types";
 import { customGet } from "@/utils/serverUtils";
 
@@ -62,7 +63,7 @@ export const getArtistById = async (
 export const getSeveralArtistsById = async (
   session: AuthSession,
   artistsId: string
-): Promise<Artist> => {
+): Promise<SeveralArtists> => {
   return customGet(`https://api.spotify.com/v1/artists?${artistsId}`, session);
 };
 

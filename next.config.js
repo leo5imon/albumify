@@ -5,7 +5,7 @@ module.exports = {
   images: {
     remotePatterns: [
       {
-        hostname: 'scdn.co',
+        hostname: 'i.scdn.co',
       }
     ],
 },

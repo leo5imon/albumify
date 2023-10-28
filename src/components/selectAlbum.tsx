@@ -1,7 +1,5 @@
-//Mettre dans deux composants différents
-
 'use client'
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import Image from 'next/image';
 
 interface DropDownProps {
   artist: string[];
@@ -9,10 +7,9 @@ interface DropDownProps {
 }
 
 const SelectAlbum = ({ artist, url }: DropDownProps) => {
-  //URLSearchParams.has() -> Implementer
   const onClick = (value: string) => {
     if (!value) {
-      return; // Si la valeur est vide, ne pas effectuer de redirection
+      return;
     }
   
     const url = `/newalbum?artist=${encodeURIComponent(value)}`;
@@ -25,7 +22,7 @@ const SelectAlbum = ({ artist, url }: DropDownProps) => {
       <div className="grid grid-cols-8 gap-4">
       {artist.map((opt, i) => (
         <div className="overflow-hidden cursor-pointer" key={opt} onClick={() => onClick(artist[i])}>
-          <img className="p-2 object-cover aspect-square hover:scale-105" src={url[i]} alt={artist[i]}/>
+          <Image className="p-2 object-cover aspect-square hover:scale-105" width={200} height={200} src={url[i]} alt={artist[i]}/>
           <p className="text-black text-center">{artist[i]}</p>
         </div>
       ))}

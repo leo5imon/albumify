@@ -49,6 +49,18 @@ export interface Artist {
   genres?: string[];
 }
 
+export interface SeveralArtists {
+  artists: {
+    id: string;
+    images:
+      {
+        url: string;
+        };
+      }
+    name: string;
+    uri: string;
+  };
+
 export interface Track {
   id: string;
   name: string;
