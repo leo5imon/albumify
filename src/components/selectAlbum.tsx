@@ -18,7 +18,7 @@ const SelectAlbum = ({ artist, url }: DropDownProps) => {
 
   return (
     <div>
-      <h1 className="text-black text-2xl font-bold">Select an Artist: {artist.value}</h1>
+      <h1 className="text-black text-2xl font-bold">Select an Artist:</h1>
       <div className="grid grid-cols-8 gap-4">
       {artist.map((opt, i) => (
         <div className="overflow-hidden cursor-pointer" key={opt} onClick={() => onClick(artist[i])}>
