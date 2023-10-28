@@ -1,8 +1,9 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
 
+//Modifier le scope
 const scope =
-  "user-read-recently-played user-read-playback-state user-top-read user-modify-playback-state user-read-currently-playing user-follow-read playlist-read-private user-read-email user-read-private user-library-read playlist-read-collaborative";
+  "user-read-recently-played playlist-modify-private playlist-modify-public user-read-playback-state user-top-read user-modify-playback-state user-read-currently-playing user-follow-read playlist-read-private user-read-email user-read-private user-library-read playlist-read-collaborative";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -23,6 +24,7 @@ export const authOptions: NextAuthOptions = {
         token.accessToken = account.access_token;
       }
       return token;
+      
     },
     async session({ session, token }) {
       session.user = token;

@@ -59,6 +59,13 @@ export const getArtistById = async (
   return customGet(`https://api.spotify.com/v1/artists/${artistId}`, session);
 };
 
+export const getSeveralArtistsById = async (
+  session: AuthSession,
+  artistsId: string
+): Promise<Artist> => {
+  return customGet(`https://api.spotify.com/v1/artists?${artistsId}`, session);
+};
+
 export const getArtistDiscography = async (
   session: AuthSession,
   artistId: string
