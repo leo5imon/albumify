@@ -25,7 +25,7 @@ const PlaylistRedirect = ({ id }: playlistRedirectProps) => {
 
 return (
     <div>
-        <h1 className="text-black text-2xl font-bold">Playlist crée</h1>
+        <h1 className="text-black text-2xl font-bold">Playlist created</h1>
         {showIframe && (
         <iframe
           width="30%"
@@ -35,7 +35,7 @@ return (
           loading="lazy"
         ></iframe>
       )}
-        <button type="button" onClick={() => router.push('/')}>Create new playlist</button>
+        <button type="button" onClick={() => router.push('/')}>Create a new playlist</button>
     </div>
   );
 };

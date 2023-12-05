@@ -5,6 +5,7 @@ import { getUserLikedSongs } from "@/utils/actions";
 import { getAuthSession } from "@/utils/serverUtils";
 import { playlistAlbum } from "@/utils/playlistAlbum";
 import PlaylistRedirect from "@/components/playlistRedirect";
+import LogoutButton from "@/components/logoutButton";
 
 export default async function Page({searchParams}) {
     const session = await getAuthSession();
@@ -17,6 +18,9 @@ export default async function Page({searchParams}) {
     const playlistId = await playlistAlbum(session, filteredAlbum.raw, searchParams.artist);
     
     return (
-        <PlaylistRedirect id={playlistId}/>
+        <div>
+            <PlaylistRedirect id={playlistId}/>
+            <LogoutButton/>
+        </div>
      )
 };
