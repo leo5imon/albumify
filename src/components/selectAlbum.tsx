@@ -17,7 +17,7 @@ const SelectAlbum = ({ artist, url, id }: selectAlbumProps) => {
     window.location.href = url;
   };
 
-  const spotClick = (value: id) => {
+  const spotClick = (value: string) => {
     if (!value) {
       return;
     }
