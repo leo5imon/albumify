@@ -1,11 +1,13 @@
 import "@/app/globals.css";
 import { NextAuthProvider } from "@/providers/NextAuthProvider";
-import { Montserrat } from "next/font/google";
-const fontFamily = Montserrat({ subsets: ["latin"] });
+import { Pixelify_Sans } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
+
+const fontFamily = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Albumify",
-  description: "Create your album",
+  title: "Albumify | Remix your Spotify albums",
+  description: "Join the rabbit hole, connect your Spotify and pick your favorite artist",
 };
 
 export default function RootLayout({
@@ -16,13 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <NextAuthProvider>
-          <body
-            className={
-              fontFamily.className +
-              "h-screen w-screen flex flex-col overflow-hidden bg-white text-black"}
-          >
-                <main className="m-5">{children}</main>
-          </body>
+        <body className={fontFamily.className + "h-screen w-screen flex flex-col overflow-hidden bg-black"}>
+              <main className={"m-5"}>{children}</main>
+              <Analytics />
+        </body>
       </NextAuthProvider>
     </html>
   );

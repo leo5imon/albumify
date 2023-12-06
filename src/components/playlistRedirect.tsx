@@ -1,6 +1,9 @@
 'use client'
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Pixelify_Sans } from "next/font/google";
+
+const fontFamily = Pixelify_Sans({ subsets: ["latin"] });
 
 interface playlistRedirectProps {
   id: string;
@@ -24,19 +27,14 @@ const PlaylistRedirect = ({ id }: playlistRedirectProps) => {
     }, []);
 
 return (
-    <div>
-        <h1 className="text-black text-2xl font-bold">Playlist created</h1>
-        {showIframe && (
-        <iframe
-          width="30%"
-          height="500"
-          src={embed}
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      )}
-        <button type="button" onClick={() => router.push('/')}>Create a new playlist</button>
-    </div>
+  <div className={fontFamily.className + " text-lime-300 flex flex-col items-center justify-center w-screen h-screen gap-5"}>
+      <div><h1 className="text-2xl font-bold animate-bounce">Album successfully created</h1></div>
+      {showIframe && (
+      <iframe className="lg:w-2/6 lg:h-4/6" src={embed} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+      ></iframe>
+    )}
+      <button type="button" className="hover:cursor-pointer" onClick={() => router.push('/')}>Create an album for another artist</button>
+  </div>
   );
 };
 

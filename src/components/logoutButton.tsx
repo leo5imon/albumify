@@ -1,6 +1,9 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { MouseEvent } from 'react';
+import { Pixelify_Sans } from "next/font/google";
+
+const fontFamily = Pixelify_Sans({ subsets: ["latin"] });
 
 const LogoutButton: React.FC = () => {
   const router = useRouter();
@@ -10,8 +13,8 @@ const LogoutButton: React.FC = () => {
   };
 
   return (
-    <div className="absolute bottom-5 right-5">
-      <button onClick={handleLogout}>Log-out</button>
+    <div className={fontFamily.className + " text-lime-300 absolute bottom-5 right-5"}>
+      <button onClick={handleLogout}>Sign-out</button>
     </div>
   );
 };

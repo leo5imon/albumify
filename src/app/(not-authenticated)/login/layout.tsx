@@ -1,12 +1,12 @@
 import "@/app/globals.css";
 import { NextAuthProvider } from "@/providers/NextAuthProvider";
-import { Montserrat } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 
-const fontFamily = Montserrat({ subsets: ["latin"] });
+const fontFamily = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Albumify | Login with Spotify",
-  description: "Login page to authenticate through Spotify",
+  title: "Albumify | Remix your Spotify albums",
+  description: "Join the rabbit hole, connect your Spotify and pick your favorite artist",
 };
 
 export default function LoginPageLayout({
@@ -17,7 +17,7 @@ export default function LoginPageLayout({
   return (
     <html lang="en">
       <NextAuthProvider>
-        <body className={fontFamily.className + " text-white bg-paper-700"}>
+        <body className={fontFamily.className + " text-lime-300"}>
           <main>{children}</main>
         </body>
       </NextAuthProvider>
