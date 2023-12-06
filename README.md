@@ -1,4 +1,4 @@
-App allowing users to create albums based on their liked songs on Spotify.
+NextJS project allowing users to create albums based on their liked songs on Spotify.
 Initial configuration : return artists with more than 4 liked songs and less than 20 liked songs.
 Uses the public Spotify API and Next Auth for OAuth authentification.
 

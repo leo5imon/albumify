@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { NextAuthProvider } from "@/providers/NextAuthProvider";
 import { Pixelify_Sans } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 
 const fontFamily = Pixelify_Sans({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function LoginPageLayout({
       <NextAuthProvider>
         <body className={fontFamily.className + " text-lime-300"}>
           <main>{children}</main>
+          <Analytics />
         </body>
       </NextAuthProvider>
     </html>
